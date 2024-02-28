@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import PropsDemo from "./exercises/PropsDemo";
+import ListDemo from "./exercises/ListDemo";
+
 
 
 export default function App() {
@@ -24,8 +26,8 @@ export default function App() {
           </div>
           <div className="exercise-style">
             {selectedView == "info" ? <p>All exercises for React day-1</p> : null}
-            {selectedView === "props1" ? <PropsDemo title="Props Exercise" /> : null}
-            {/**Add the exercise components you create for each exercise using the key you used for the matching button  */}
+              {selectedView === "props" && <PropsDemo title="Props Exercise" />}
+              {selectedView === "list" && <ListDemo title="List Exercise" />}
         </div>
       </div>
     </div>
@@ -38,26 +40,16 @@ type ButtonProps = {
 const Buttons = (props: ButtonProps) => {
   const { onSelected: handleSelected, btnStyle: btnStyle } = props;
   return (
-    <>
-      <button className="btn-w100" onClick={() => handleSelected("info")}>
-        Info
-      </button>
-      {/* Add a new button for each of the exercises you complete */}
-      <button className="btn-w100" onClick={() => handleSelected("props1")}>
-        Props demo1
-      </button>
-      <button className="btn-w100" onClick={() => handleSelected("props1")}>
-        List demo1
-      </button>
-      <button className="btn-w100" onClick={() => handleSelected("props1")}>
-        Event demo1
-      </button>
-      <button className="btn-w100" onClick={() => handleSelected("props1")}>
-        Forms Uncontrolled
-      </button>
-      <button className="btn-w100" onClick={() => handleSelected("props1")}>
-        State demo1 (count)
-      </button>
-    </>
+      <>
+          <button className="btn-w100" onClick={() => handleSelected("info")}>
+              Info
+          </button>
+          <button className="btn-w100" onClick={() => handleSelected("props")}>
+              Props demo
+          </button>
+          <button className="btn-w100" onClick={() => handleSelected("list")}>
+              List demo
+          </button>
+      </>
   );
 };
