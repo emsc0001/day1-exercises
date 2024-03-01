@@ -10,4 +10,5 @@ export default function ImageButton({image, onClick}:Props) {
             <img style={{height: "50px"}} src={image} alt={image}/>
         </button>
     )
+
 }

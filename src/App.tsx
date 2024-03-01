@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import PropsDemo from "./exercises/PropsDemo";
 import ListDemo from "./exercises/ListDemo";
+import EventDemo from "./exercises/EventDemo.tsx";
 
 
 
@@ -28,6 +29,7 @@ export default function App() {
             {selectedView == "info" ? <p>All exercises for React day-1</p> : null}
               {selectedView === "props" && <PropsDemo title="Props Exercise" />}
               {selectedView === "list" && <ListDemo title="List Exercise" />}
+              {selectedView === "events" && <EventDemo title="React Events Exercise" />}
         </div>
       </div>
     </div>
@@ -49,6 +51,9 @@ const Buttons = (props: ButtonProps) => {
           </button>
           <button className="btn-w100" onClick={() => handleSelected("list")}>
               List demo
+          </button>
+          <button className="btn-w100" onClick={() => handleSelected("events")}>
+              React Events
           </button>
       </>
   );

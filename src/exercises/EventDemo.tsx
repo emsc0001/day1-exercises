@@ -1,9 +1,10 @@
 //import ImageButton from "../components/ImageButton";
+import ImageButton from "../components/ImageButton";
 import { BaseProps } from "../types";
 import { useState } from "react";
 
 
-export default function EventDemo1({ title }: BaseProps) {
+export default function EventDemo({ title }: BaseProps) {
     const [textFromBtn, setTextFromBtn] = useState("");
     return (
         <>
